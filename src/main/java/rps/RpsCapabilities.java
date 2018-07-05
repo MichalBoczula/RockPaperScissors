@@ -5,13 +5,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class RpsCapabilities {
+final class RpsCapabilities {
 
     private List<String> moves = new ArrayList<>();
     private Map<String, String> capabilities = new HashMap<>();
 
-    public boolean findPair(String p, String c){
-        setCapabilities();
+    RpsCapabilities() {
+
+        setMovesCapabilities();
+        setMovesToList();
+    }
+
+    boolean chooseWinnerAndGivePoint(String p, String c){
+
         boolean answer = false;
 
         final String key = p+c;
@@ -26,7 +32,7 @@ public final class RpsCapabilities {
         return answer;
     }
 
-    private void setCapabilities(){
+    private void setMovesCapabilities(){
         final String rp = "rp";
         final String descRP= "p";
         capabilities.put(rp, descRP);
@@ -40,12 +46,11 @@ public final class RpsCapabilities {
         capabilities.put(ps, descPS);
     }
 
-    public String getMoves(int number) {
-        setMoves();
+    String getMoveFromList(int number) {
         return moves.get(number-1);
     }
 
-    private void setMoves() {
+    private void setMovesToList() {
         moves.add("r");
         moves.add("p");
         moves.add("s");

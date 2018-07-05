@@ -2,13 +2,13 @@ package rps;
 
 import java.util.Random;
 
-public final class RpsComputerMoves {
+final class RpsComputerMoves {
 
     private final Random random = new Random();
     private final RpsCapabilities rpsCapabilities = new RpsCapabilities();
 
-    public String getMove() {
-        return rpsCapabilities.getMoves(randomNumber());
+    String getMove() {
+        return rpsCapabilities.getMoveFromList(randomNumber());
     }
 
     private int randomNumber(){
