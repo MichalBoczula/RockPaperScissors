@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 final class RpsCapabilities {
-
     private List<String> moves = new ArrayList<>();
     private Map<String, String> capabilities = new HashMap<>();
 
